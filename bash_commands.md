@@ -98,13 +98,27 @@ grep -oE "\b[[:upper:]]+[[:upper:]\ '\-]+[[:upper:]]\b" $yourfile
 grep [options] -- "$pattern" $yourfile
 ```
 
-# The sox tricks (audio manipulation)
+# Audio manipulation
+## sox
 ```bash
 # Convert from raw to wav (48k)
 sox -r 48000 -e signed -b 16 -c 1 $yourfile $youroutput
 
 # Downsample with sox (to 16k)
 sox -G $yourfile -r 16000 $youroutput
+
+# Get info on audio file
+soxi $audiofile
+```
+
+## ffmpeg
+```bash
+# need to install ffmpeg
+# Simple conversion from mp3 to wav
+ffmpeg -i input.mp3 output.wav
+
+# Conversion to specific wanted format (here 16 bits 16kHz mono)
+ffmpeg -v 8 -i input.mp3 -f wav -acodec pcm_s16le -ac 1 -ar 16000 output.wav
 ```
 
 # Other various tricks
