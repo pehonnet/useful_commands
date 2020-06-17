@@ -121,6 +121,25 @@ ffmpeg -i input.mp3 output.wav
 ffmpeg -v 8 -i input.mp3 -f wav -acodec pcm_s16le -ac 1 -ar 16000 output.wav
 ```
 
+# Archive extraction
+```bash
+# .tar.bz2
+tar -xvf archive.tar.bz2
+
+# .tar.gz
+tar -xvzf archive.tar.gz
+
+# .gz
+gunzip -c text.txt.gz > text.txt
+gunzip < text.txt.gz > text.txt
+
+# .zip
+unzip archive.zip
+
+# Compression to .tar.gz
+tar cvzf archive.tar.gz archive
+```
+
 # Other various tricks
 ```bash
 # Check if directory is empty or not
