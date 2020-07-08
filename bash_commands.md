@@ -169,4 +169,7 @@ find /yourdirectory/ -xdev -type d -exec sh -c '
 
 # To merge 2 files with columns (eg col1 col2 in $file1 and col3 in $file2 > col1 col2 col3)
 paste $file1 $file2 > $file3
+
+# Sort lines by length
+cat $yourfile | awk '{ print length, $0 }' | sort -n -s | cut -d" " -f2-
 ```
