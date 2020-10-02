@@ -44,6 +44,9 @@ sed '/^\s*$/d' $yourfile
 
 # Replace the first space by a tab on each line
 sed 's/ /'$'\t''/' $yourfile
+
+# Add a space between each character (also see awk version below)
+sed 's/./& /g' $yourfile
 ```
 
 # The awk tricks
@@ -58,9 +61,12 @@ awk '/pattern1/ { show=1 } show; /pattern2/ { show=0 }' $yourfile
 awk 'length < X' $yourfile
 
 # Print columns between 3 and 12 (included)
-awk '{for(i=3;i<=12;++i)print $i}'
+awk '{for(i=3;i<=12;++i)print $i}' $yourfile
 # or:
-awk '{for(i=3;i<=12;i++){printf "%s ", $i}; printf "\n"}'
+awk '{for(i=3;i<=12;i++){printf "%s ", $i}; printf "\n"}' $yourfile
+
+# Add a space between each character
+awk '$1=$1' FS= OFS=" " $yourfile
 
 # "Transpose" a file (convert row to column and vice versa)
 awk '
@@ -85,6 +91,9 @@ awk -v var="$variable" 'BEGIN {print var}'
 
 # Use multiple if conditions
 awk '{if ($3 =="" || $4 == "" || $5 == "") print $1, "Missing col 2"}' $yourfile
+
+# Use printf (don't forget "\n")
+awk '{printf("This is column 1: %s, this is column 3: %s, and this is column 5: %s\n", $1, $3, $5)}'
 ```
 # The grep tricks
 ```bash
