@@ -147,6 +147,10 @@ unzip archive.zip
 
 # Compression to .tar.gz
 tar cvzf archive.tar.gz archive
+
+# Extracting multi sub-archives (zip)
+# where you have archive.zip.001 archive.zip.002 archive.zip.003 ...
+cat archive.zip.* > archive.zip && unzip archive.zip
 ```
 
 # Other various tricks
