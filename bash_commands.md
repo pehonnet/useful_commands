@@ -185,4 +185,20 @@ paste $file1 $file2 > $file3
 
 # Sort lines by length
 cat $yourfile | awk '{ print length, $0 }' | sort -n -s | cut -d" " -f2-
+
+# Write to file from bash script
+cat << EOF > $your_file
+This will be the content
+of the file you wanted to
+create, even with variables
+like $var1
+EOF
+
+# A version where variables are not interpreted:
+cat << 'EOF' > $your_file
+This will still show
+$var1 and not the content of
+$var1. It can be useful to "write"
+scripts.
+EOF
 ```
