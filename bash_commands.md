@@ -68,6 +68,11 @@ awk '{for(i=3;i<=12;i++){printf "%s ", $i}; printf "\n"}' $yourfile
 # Add a space between each character
 awk '$1=$1' FS= OFS=" " $yourfile
 
+# Match 2 files based on a column
+# This command will print the full lines of $file_where_to_look_in
+# if the first field of $what_you_are_looking_for and $file_where_to_look_in match
+awk 'NR==FNR{a[$1]; next}$1 in a{print $0}' $what_you_are_looking_for $file_where_to_look_in
+
 # "Transpose" a file (convert row to column and vice versa)
 awk '
 {
