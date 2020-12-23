@@ -123,6 +123,9 @@ sox -G $yourfile -r 16000 $youroutput
 
 # Get info on audio file
 soxi $audiofile
+
+# Trim an audio file (from 1 sec to 6.2 sec)
+sox $audiofile $outputaudiofile trim 1.0 5.2
 ```
 
 ## ffmpeg
