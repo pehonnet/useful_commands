@@ -126,6 +126,9 @@ soxi $audiofile
 
 # Trim an audio file (from 1 sec to 6.2 sec)
 sox $audiofile $outputaudiofile trim 1.0 5.2
+
+# Convert raw (mono ulaw 8kHz) to wav (mono pcm 16bit 8kHz)
+sox -t ul -r 8000 -c 1 in.raw -r 8000 -b 16 -c 1 out.wav
 ```
 
 ## ffmpeg
@@ -159,6 +162,25 @@ tar cvzf archive.tar.gz archive
 # Extracting multi sub-archives (zip)
 # where you have archive.zip.001 archive.zip.002 archive.zip.003 ...
 cat archive.zip.* > archive.zip && unzip archive.zip
+```
+
+# Docker related
+```bash
+# Remove dangling images
+docker image prune
+
+# Remove all stopped containers
+docker container prune
+
+# Prune volumes
+docker volume prune
+
+# Prune everything (images, containers, networks)
+docker system prune
+# and to also prune volumes at the same time:
+docker system prune --volumes
+
+# Source: https://docs.docker.com/config/pruning/
 ```
 
 # Other various tricks
