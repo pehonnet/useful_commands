@@ -6,7 +6,7 @@ Assuming you want to run jupyter-lab on a server to which you can ssh, and view 
 # Assuming you can ssh to a server with IP 10.10.10.10
 
 # On the server (after ssh-ing) start the notebook on the desired port:
-jupter-lab --no-browser --port=8888
+jupyter-lab --no-browser --port=8888
 # this will give you the URL to access the lab
 
 # On your local machine
