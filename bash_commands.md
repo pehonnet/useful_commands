@@ -1,7 +1,17 @@
 Here are a few bash tricks I needed to write down at some point as I don't use
 them enough to remember them. After some practice, most are obvious.
 
-# Basic stuff
+# Table of Contents
+[Basic Stuff](#basic)
+[The sed tricks](#sed)
+[The awk tricks](#awk)
+[The grep tricks](#grep)
+[Audio Manipulation](#audio)
+[Archive Extraction](#archive)
+[Docker Related](#docker)
+[Other Various Tricks](#various)
+
+# Basic stuff <a name="basic"></a>
 For loop syntax
 ```bash
 # On numbers, characters, strings, etc.
@@ -16,7 +26,7 @@ While loop on lines
 cat $yourfile | while read line; do "This is your current line: $line"; done
 ```
 
-# The sed tricks
+# The sed tricks <a name="sed"></a>
 ```bash
 # Replace windows newlines by unix newlines
 sed 's/^M$//' $yourfile
@@ -49,7 +59,7 @@ sed 's/ /'$'\t''/' $yourfile
 sed 's/./& /g' $yourfile
 ```
 
-# The awk tricks
+# The awk tricks <a name="awk"></a>
 ```bash
 # Sum the number of one column (here the first one) in a file
 awk '{ sum+=$1} END {print sum}' $yourfile
@@ -100,7 +110,7 @@ awk '{if ($3 =="" || $4 == "" || $5 == "") print $1, "Missing col 2"}' $yourfile
 # Use printf (don't forget "\n")
 awk '{printf("This is column 1: %s, this is column 3: %s, and this is column 5: %s\n", $1, $3, $5)}'
 ```
-# The grep tricks
+# The grep tricks  <a name="grep"></a>
 ```bash
 # Grep stuff before newline
 grep "stuff$" $yourfile
@@ -112,7 +122,7 @@ grep -oE "\b[[:upper:]]+[[:upper:]\ '\-]+[[:upper:]]\b" $yourfile
 grep [options] -- "$pattern" $yourfile
 ```
 
-# Audio manipulation
+# Audio manipulation <a name="audio"></a>
 ## sox
 ```bash
 # Convert from raw to wav (48k)
@@ -164,7 +174,7 @@ tar cvzf archive.tar.gz archive
 cat archive.zip.* > archive.zip && unzip archive.zip
 ```
 
-# Docker related
+# Docker related <a name="docker"></a>
 ```bash
 # Remove dangling images
 docker image prune
@@ -183,7 +193,7 @@ docker system prune --volumes
 # Source: https://docs.docker.com/config/pruning/
 ```
 
-# Other various tricks
+# Other various tricks <a name="various"></a>
 ```bash
 # Check if directory is empty or not
 if [ "$(ls -A /path/to/dir)" ]; then echo "Not Empty"; else echo "Empty"; fi
