@@ -2,14 +2,14 @@ Here are a few bash tricks I needed to write down at some point as I don't use
 them enough to remember them. After some practice, most are obvious.
 
 # Table of Contents
-[Basic Stuff](#basic)
-[The sed tricks](#sed)
-[The awk tricks](#awk)
-[The grep tricks](#grep)
-[Audio Manipulation](#audio)
-[Archive Extraction](#archive)
-[Docker Related](#docker)
-[Other Various Tricks](#various)
+1. [Basic Stuff](#basic)
+2. [The sed tricks](#sed)
+3. [The awk tricks](#awk)
+4. [The grep tricks](#grep)
+5. [Audio Manipulation](#audio)
+6. [Archive Extraction](#archive)
+7. [Docker Related](#docker)
+8. [Other Various Tricks](#various)
 
 # Basic stuff <a name="basic"></a>
 For loop syntax
