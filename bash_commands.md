@@ -7,7 +7,7 @@ them enough to remember them. After some practice, most are obvious.
 3. [The awk tricks](#awk)
 4. [The grep tricks](#grep)
 5. [Audio Manipulation](#audio)
-6. [Archive Extraction](#archive)
+6. [Archive Extraction / Compression](#archive)
 7. [Docker Related](#docker)
 8. [Other Various Tricks](#various)
 
@@ -152,6 +152,7 @@ ffmpeg -v 8 -i input.mp3 -f wav -acodec pcm_s16le -ac 1 -ar 16000 output.wav
 ```
 
 # Archive extraction
+## Extract compressed version
 ```bash
 # .tar.bz2
 tar -xvf archive.tar.bz2
@@ -166,12 +167,20 @@ gunzip < text.txt.gz > text.txt
 # .zip
 unzip archive.zip
 
-# Compression to .tar.gz
-tar cvzf archive.tar.gz archive
-
 # Extracting multi sub-archives (zip)
 # where you have archive.zip.001 archive.zip.002 archive.zip.003 ...
 cat archive.zip.* > archive.zip && unzip archive.zip
+```
+## Compress data to archive
+```bash
+# Compression to .tar.gz
+tar cvzf archive.tar.gz archive
+
+# Compression of a file to zip
+zip archive.zip archive
+
+# Compression of a folder to zip
+zip -r archive.zip archive
 ```
 
 # Docker related <a name="docker"></a>
