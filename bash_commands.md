@@ -160,6 +160,9 @@ tar -xvf archive.tar.bz2
 # .tar.gz
 tar -xvzf archive.tar.gz
 
+# .tar.xz
+tar -xvf archive.tar.xz
+
 # .gz
 gunzip -c text.txt.gz > text.txt
 gunzip < text.txt.gz > text.txt
