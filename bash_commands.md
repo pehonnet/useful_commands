@@ -138,7 +138,14 @@ soxi $audiofile
 sox $audiofile $outputaudiofile trim 1.0 5.2
 
 # Convert raw (mono ulaw 8kHz) to wav (mono pcm 16bit 8kHz)
-sox -t ul -r 8000 -c 1 in.raw -r 8000 -b 16 -c 1 out.wav
+sox -t ul -r 8000 -c 1 input.raw -r 8000 -b 16 -c 1 output.wav
+
+# Separate stereo channels
+sox input.wav ouput1.wav remix 1
+sox input.wav ouput2.wav remix 2
+
+# Convert sphere (.sph) to wav
+sox -t sph input.sph -b 16 -t wav output.wav
 ```
 
 ## ffmpeg
