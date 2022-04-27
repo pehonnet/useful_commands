@@ -191,6 +191,9 @@ zip archive.zip archive
 
 # Compression of a folder to zip
 zip -r archive.zip archive
+
+# Compression of a file with gzip (and keep original)
+gzip -c file.txt > file.txt.gz
 ```
 
 # Docker related <a name="docker"></a>
