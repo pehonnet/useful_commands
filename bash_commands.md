@@ -158,7 +158,7 @@ ffmpeg -i input.mp3 output.wav
 ffmpeg -v 8 -i input.mp3 -f wav -acodec pcm_s16le -ac 1 -ar 16000 output.wav
 ```
 
-# Archive extraction
+# Archive extraction <a name="archive"></a>
 ## Extract compressed version
 ```bash
 # .tar.bz2
