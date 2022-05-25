@@ -207,6 +207,9 @@ docker container prune
 # Prune volumes
 docker volume prune
 
+# Clean build cache
+docker builder prune
+
 # Prune everything (images, containers, networks)
 docker system prune
 # and to also prune volumes at the same time:
