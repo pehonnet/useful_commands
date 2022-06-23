@@ -266,10 +266,8 @@ $var1 and not the content of
 $var1. It can be useful to "write"
 scripts.
 EOF
-```
 
 # Create a UUID without additional tool
-```
 cat /proc/sys/kernel/random/uuid
 # this will generate a new uuid at every run
 ```
