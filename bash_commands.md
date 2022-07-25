@@ -270,4 +270,14 @@ EOF
 # Create a UUID without additional tool
 cat /proc/sys/kernel/random/uuid
 # this will generate a new uuid at every run
+
+# Detach an already running process
+# Source: https://serverfault.com/questions/34750/is-it-possible-to-detach-a-process-from-its-terminal-or-i-should-have-used-s
+# First do CTRL+Z - that interrupts the current job
+# then
+bg # to make it run in the backgroung
+# then
+jobs # to see existing processes in background
+# then
+disown %1 # or replace 1 by what you got from jobs
 ```
