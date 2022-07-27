@@ -122,7 +122,7 @@ grep -oE "\b[[:upper:]]+[[:upper:]\ '\-]+[[:upper:]]\b" $yourfile
 grep [options] -- "$pattern" $yourfile
 
 # Grep some stuff with a tab in the middle
-grep "word1$(printf '\t')word2 $yourfile
+grep "word1$(printf '\t')word2" $yourfile
 ```
 
 # Audio manipulation <a name="audio"></a>
