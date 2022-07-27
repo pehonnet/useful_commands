@@ -120,6 +120,9 @@ grep -oE "\b[[:upper:]]+[[:upper:]\ '\-]+[[:upper:]]\b" $yourfile
 
 # Grep something with potential dash (-) in it
 grep [options] -- "$pattern" $yourfile
+
+# Grep some stuff with a tab in the middle
+grep "word1$(printf '\t')word2 $yourfile
 ```
 
 # Audio manipulation <a name="audio"></a>
