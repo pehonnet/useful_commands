@@ -147,6 +147,9 @@ sox -t ul -r 8000 -c 1 input.raw -r 8000 -b 16 -c 1 output.wav
 sox input.wav ouput1.wav remix 1
 sox input.wav ouput2.wav remix 2
 
+# Convert 2 mono into 1 mono file (simple version)
+sox -M left.wav right.wav stereo.wav
+
 # Convert sphere (.sph) to wav
 sox -t sph input.sph -b 16 -t wav output.wav
 ```
